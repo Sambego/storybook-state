@@ -1,0 +1,39 @@
+{
+    "name": "@sambego/storybook-state",
+    "version": "1.0.0",
+    "description": "Manage state in storybook stories",
+    "main": "dist/index.js",
+    "scripts": {
+        "compile": "babel src --out-dir dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Sambego/storybook-state.git"
+    },
+    "keywords": ["storybook", "react-storybook", "react"],
+    "author": "Sam Bellen",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Sambego/storybook-state/issues"
+    },
+    "homepage": "https://github.com/Sambego/storybook-state#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-add-module-exports": "^0.2.1",
+        "babel-plugin-react-require": "^3.0.0",
+        "babel-plugin-react-transform": "^3.0.0",
+        "babel-plugin-transform-dead-code-elimination": "^2.2.2",
+        "babel-plugin-transform-inline-environment-variables": "^0.2.0",
+        "babel-plugin-transform-react-constant-elements": "^6.23.0",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.9",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-es2015-loose": "^8.0.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-traverse": "^6.26.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
+    }
+}
