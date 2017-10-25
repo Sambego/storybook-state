@@ -1,10 +1,10 @@
 import React, { Component, cloneElement } from 'react';
-import propTypes from 'proptypes';
+import PropTypes from 'prop-types';
 
 export default class State extends Component {
-    static propTypes = {
-        children: propTypes.element,
-        store: propTypes.object
+    static PropTypes = {
+        children: PropTypes.element,
+        store: PropTypes.object
     };
 
     constructor(props) {
