@@ -8,7 +8,7 @@ export default class Store {
 
     set(newState) {
         this.state = { ...this.state, ...newState };
-        this.callbacks.forEach(callback => callback(this.state));
+        this.callbacks.forEach(callback => callback.callback(this.state));
     }
 
     get(key) {
@@ -16,6 +16,18 @@ export default class Store {
     }
 
     subscribe(callback) {
-        this.callbacks.push(callback);
+        const subscription = uuid();
+
+        this.callbacks.push({ subscription, callback });
+
+        return subscription;
+    }
+
+    unSubscribe(subscription) {
+        this.callbacks.forEach((callback, index) => {
+            if (callback.subscription === subscription) {
+                this.callbacks.splice(index, 1);
+            }
+        });
     }
 }

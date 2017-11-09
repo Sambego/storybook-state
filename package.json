@@ -10,7 +10,11 @@
         "type": "git",
         "url": "git+https://github.com/Sambego/storybook-state.git"
     },
-    "keywords": ["storybook", "react-storybook", "react"],
+    "keywords": [
+        "storybook",
+        "react-storybook",
+        "react"
+    ],
     "author": "Sam Bellen",
     "license": "MIT",
     "bugs": {
@@ -35,5 +39,8 @@
         "babel-traverse": "^6.26.0",
         "react": "^16.0.0",
         "react-dom": "^16.0.0"
+    },
+    "dependencies": {
+        "uuid": "^3.1.0"
     }
 }

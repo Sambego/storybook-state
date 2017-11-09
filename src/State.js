@@ -15,7 +15,13 @@ export default class State extends Component {
     }
 
     componentDidMount() {
-        this.stateStore.subscribe(state => this.setState(state));
+        this.subscription = this.stateStore.subscribe(state =>
+            this.setState(state)
+        );
+    }
+
+    componentWillUnmount() {
+        this.stateStore.unSubscribe(this.subscription);
     }
 
     render() {
