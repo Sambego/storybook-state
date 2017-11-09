@@ -11,8 +11,11 @@ export default class State extends Component {
         super(props);
 
         this.stateStore = this.props.store;
-        this.stateStore.subscribe(state => this.setState(state));
         this.state = this.stateStore.state;
+    }
+
+    componentDidMount() {
+        this.stateStore.subscribe(state => this.setState(state));
     }
 
     render() {
