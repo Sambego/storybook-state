@@ -1,6 +1,6 @@
 {
     "name": "@sambego/storybook-state",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Manage state in storybook stories",
     "main": "dist/index.js",
     "scripts": {
