@@ -2,7 +2,7 @@ import React, { Component, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 
 export default class State extends Component {
-    static PropTypes = {
+    static propTypes = {
         children: PropTypes.element,
         store: PropTypes.object
     };
