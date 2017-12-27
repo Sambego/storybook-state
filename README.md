@@ -7,8 +7,8 @@ npm install --save @sambego/storybook-state
 ```
 
 First you will need to create a new store, to save the state and handle updates.
-You can add all properties which you component expects, and the State component will propagate them to your component.
-Once you've created the store, yo can wrap your components in a `State` component and pass along the store.
+You can add all properties which your component expects, and the State component will propagate them to your component.
+Once you've created the store, you can wrap your components in a `State` component and pass along the store.
 
 In the example below we create a modal which will expect an `active` property.
 When clicking on the button we will update the store, which in turn will update the property `active` on the modal;
