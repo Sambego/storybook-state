@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export default class State extends Component {
     static propTypes = {
         children: PropTypes.element,
+        parseState: PropTypes.func,
         store: PropTypes.object
     };
 
@@ -25,11 +26,11 @@ export default class State extends Component {
     }
 
     render() {
+        const state = this.props.parseState ? this.props.parseState(this.state) : this.state;
+
         return (
             <div>
-                {cloneElement(this.props.children, {
-                    ...this.state
-                })}
+                {cloneElement(this.props.children, state)}
             </div>
         );
     }
