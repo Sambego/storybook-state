@@ -76,3 +76,11 @@ The state component accepts one property, an instance of `Store`. All properties
     <StateDependendComponent />
 </State>
 ```
+
+You can also manipulate the state before passing it to the children via the parseState property
+
+```js
+<State store={store} parseState={state => ({...state, id: `#${state.uuid}`})}>
+    <StateDependendComponent />
+</State>
+```
