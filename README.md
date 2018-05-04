@@ -16,7 +16,7 @@ When clicking on the button we will update the store, which in turn will update 
 ```js
 import React from 'react';
 import { storiesOf } from "@storybook/react";
-import { State, Store} from '@sambego/storybook-state';
+import { State, Store } from '@sambego/storybook-state';
 
 const store = new Store({
     active: false,
