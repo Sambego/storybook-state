@@ -28,10 +28,17 @@ export default class State extends Component {
     render() {
         const state = this.props.parseState ? this.props.parseState(this.state) : this.state;
 
-        return (
-            <div>
-                {cloneElement(this.props.children, state)}
-            </div>
-        );
-    }
+		return (
+			<div>
+				{React.children.count > 1
+					? React.Children.map(this.props.children, (child, i) => {
+						if (typeof child === 'string') {
+							return child;
+						}
+						return cloneElement(child, state);
+					  })
+					: cloneElement(child, state)}
+			</div>
+		);
+	}
 }
