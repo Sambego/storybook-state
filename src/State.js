@@ -1,4 +1,4 @@
-import React, { Component, cloneElement } from 'react';
+import React, { Component, cloneElement, isValidElement, Children } from 'react';
 import PropTypes from 'prop-types';
 
 export default class State extends Component {
@@ -30,7 +30,7 @@ export default class State extends Component {
 
         return (
             <div>
-                {cloneElement(this.props.children, state)}
+                {Children.map(this.props.children, child => isValidElement(child) ? cloneElement(child, state) : child)}
             </div>
         );
     }
