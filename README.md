@@ -13,6 +13,8 @@ Once you've created the store, you can wrap your components in a `State` compone
 In the example below we create a modal which will expect an `active` property.
 When clicking on the button we will update the store, which in turn will update the property `active` on the modal;
 
+#### Display and update using a State component
+
 ```js
 import React from 'react';
 import { storiesOf } from "@storybook/react";
@@ -32,6 +34,27 @@ storiesOf('Button', module).add('with text', () => (
         <Button onClick={() => store.set({ active: !store.get('active') })} />
     </div>
 ));
+```
+
+#### Display and update using a State decorator
+
+```js
+import React from 'react';
+import { storiesOf } from "@storybook/react";
+import { State, Store } from '@sambego/storybook-state';
+
+const store = new Store({
+    active: false,
+});
+
+storiesOf('Button', module)
+    .addDecorator(StateDecorator(store))
+    .add('with text', () => [
+      <Modal key="modal">
+          Modal content
+      </Modal>,
+      <Button onClick={() => store.set({ active: !store.get('active') })} key="button"/>
+    ]);
 ```
 
 ### Store
@@ -77,10 +100,18 @@ The state component accepts one property, an instance of `Store`. All properties
 </State>
 ```
 
-You can also manipulate the state before passing it to the children via the parseState property
+You can also manipulate the state before passing it to the children via the parseState property.
 
 ```js
 <State store={store} parseState={state => ({...state, id: `#${state.uuid}`})}>
     <StateDependendComponent />
 </State>
+```
+
+When using the `StateDecorator` you can pass along the state parser function as the second argument.
+
+```js
+storiesOf("Button", module)
+    .addDecorator(StateDecorator(store, state => ({...state, id: `#${state.uuid}`}))
+    .add(...)
 ```
