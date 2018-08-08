@@ -31,6 +31,10 @@ export default class State extends Component {
       ? this.props.parseState(this.state)
       : this.state;
 
+    if (!this.props.children) {
+      throw new Error("Please add at least one child element.");
+    }
+
     if (this.props.children.length) {
       return this.props.children.map(child => cloneElement(child, state));
     }

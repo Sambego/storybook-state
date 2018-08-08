@@ -1,35 +1,39 @@
-import uuid from 'uuid';
+import uuid from "uuid";
 
 export default class Store {
-    state = {};
-    callbacks = [];
+  state = {};
+  callbacks = [];
 
-    constructor(state) {
-        this.state = { ...state };
+  constructor(state) {
+    this.state = { ...state };
+  }
+
+  set(newState) {
+    this.state = { ...this.state, ...newState };
+    this.callbacks.forEach(callback => callback.callback(this.state));
+  }
+
+  get(key) {
+    if (key) {
+      return this.state[key];
     }
 
-    set(newState) {
-        this.state = { ...this.state, ...newState };
-        this.callbacks.forEach(callback => callback.callback(this.state));
-    }
+    return this.state;
+  }
 
-    get(key) {
-        return this.state[key];
-    }
+  subscribe(callback) {
+    const subscription = uuid();
 
-    subscribe(callback) {
-        const subscription = uuid();
+    this.callbacks.push({ subscription, callback });
 
-        this.callbacks.push({ subscription, callback });
+    return subscription;
+  }
 
-        return subscription;
-    }
-
-    unSubscribe(subscription) {
-        this.callbacks.forEach((callback, index) => {
-            if (callback.subscription === subscription) {
-                this.callbacks.splice(index, 1);
-            }
-        });
-    }
+  unSubscribe(subscription) {
+    this.callbacks.forEach((callback, index) => {
+      if (callback.subscription === subscription) {
+        this.callbacks.splice(index, 1);
+      }
+    });
+  }
 }
