@@ -41,7 +41,7 @@ storiesOf('Button', module).add('with text', () => (
 ```js
 import React from 'react';
 import { storiesOf } from "@storybook/react";
-import { State, Store } from '@sambego/storybook-state';
+import { StateDecorator, Store } from '@sambego/storybook-state';
 
 const store = new Store({
     active: false,
