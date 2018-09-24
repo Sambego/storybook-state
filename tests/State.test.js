@@ -75,3 +75,25 @@ test("edit the passed state trough the parseState prop", () => {
 
   expect(stateElement.childAt(0).props().foo).toBe("test_baz");
 });
+
+test("accept a function returning elements as a child", () => {
+  const store = new Store({
+    checkbox1: true,
+    checkbox2: false
+  });
+
+  const stateElement = shallow(
+    <State store={store}>
+      {props => [
+        <input type="checkbox" id="checkbox1" checked={props.checkbox1} />,
+        <input type="checkbox" id="checkbox2" checked={props.checkbox2} />
+      ]}
+    </State>
+  );
+
+  expect(stateElement.find("#checkbox1"));
+  expect(stateElement.find("#checkbox2"));
+
+  expect(stateElement.find("#checkbox1").prop("checked")).toBe(true);
+  expect(stateElement.find("#checkbox2").prop("checked")).toBe(false);
+});
