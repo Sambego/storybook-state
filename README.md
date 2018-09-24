@@ -16,45 +16,44 @@ When clicking on the button we will update the store, which in turn will update 
 #### Display and update using a State component
 
 ```js
-import React from 'react';
+import React from "react";
 import { storiesOf } from "@storybook/react";
-import { State, Store } from '@sambego/storybook-state';
+import { State, Store } from "@sambego/storybook-state";
 
 const store = new Store({
-    active: false,
+  active: false
 });
 
-storiesOf('Button', module).add('with text', () => (
-    <div>
-        <State store={store}>
-            <Modal>
-                Modal content
-            </Modal>
-        </State>
-        <Button onClick={() => store.set({ active: !store.get('active') })} />
-    </div>
+storiesOf("Button", module).add("with text", () => (
+  <div>
+    <State store={store}>
+      <Modal>Modal content</Modal>
+    </State>
+    <Button onClick={() => store.set({ active: !store.get("active") })} />
+  </div>
 ));
 ```
 
 #### Display and update using a State decorator
 
 ```js
-import React from 'react';
+import React from "react";
 import { storiesOf } from "@storybook/react";
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { StateDecorator, Store } from "@sambego/storybook-state";
 
 const store = new Store({
-    active: false,
+  active: false
 });
 
-storiesOf('Button', module)
-    .addDecorator(StateDecorator(store))
-    .add('with text', () => [
-      <Modal key="modal">
-          Modal content
-      </Modal>,
-      <Button onClick={() => store.set({ active: !store.get('active') })} key="button"/>
-    ]);
+storiesOf("Button", module)
+  .addDecorator(StateDecorator(store))
+  .add("with text", () => [
+    <Modal key="modal">Modal content</Modal>,
+    <Button
+      onClick={() => store.set({ active: !store.get("active") })}
+      key="button"
+    />
+  ]);
 ```
 
 ### Store
@@ -62,31 +61,35 @@ storiesOf('Button', module)
 The store has a few methods you can use to get and update the state.
 
 When creating a new instance, you can pass along the initial state.
+
 ```js
 const store = new Store({
-    foo: 'bar',
-    active: true,
-    items: ['item 1', 'item 2'],
-})
+  foo: "bar",
+  active: true,
+  items: ["item 1", "item 2"]
+});
 ```
 
 You can retrieve a state from the store by using the `get()` method.
+
 ```js
-store.get('foo') // will return 'bar'
-store.get('active') // will return true
-store.get('items') // will return ['item 1', 'item 2']
+store.get("foo"); // will return 'bar'
+store.get("active"); // will return true
+store.get("items"); // will return ['item 1', 'item 2']
 ```
 
 You can update the store by using the `set()` method.
+
 ```js
 store.set({
-    active: false,
-    bar: 'foo',
+  active: false,
+  bar: "foo"
 });
 ```
 
 You can subscribe to changes in the store by using the `subscribe()` method.
 You can register a callback, which will have the updated state as the first parameter whenever the state updates.
+
 ```js
 store.subscribe(state => // Do something with the updated state.
 ```
@@ -94,17 +97,33 @@ store.subscribe(state => // Do something with the updated state.
 ### State component
 
 The state component accepts one property, an instance of `Store`. All properties that depend on the state, or should update on state changes, should be added in the Store, and will be propagated to your component by the `<State />` component.
+
 ```js
 <State store={store}>
-    <StateDependendComponent />
+  <StateDependendComponent />
 </State>
+```
+
+The state also allows a function as a child so you can pass the state to any prop of your components.
+
+```js
+const store = new Store({
+  active: true
+});
+
+<State store={store}>
+  {state => [
+    <ElementOne active={state.active} />,
+    <ElementTwo checked={state.active} />
+  ]}
+</State>;
 ```
 
 You can also manipulate the state before passing it to the children via the parseState property.
 
 ```js
-<State store={store} parseState={state => ({...state, id: `#${state.uuid}`})}>
-    <StateDependendComponent />
+<State store={store} parseState={state => ({ ...state, id: `#${state.uuid}` })}>
+  <StateDependendComponent />
 </State>
 ```
 
