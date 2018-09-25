@@ -36,9 +36,7 @@ export default class State extends Component {
     }
 
     if (typeof this.props.children === "function") {
-      return this.props
-        .children(state)
-        .map(child => cloneElement(child, state));
+      return this.props.children(state);
     }
 
     if (this.props.children.length) {
