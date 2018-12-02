@@ -22,6 +22,7 @@
         "url": "https://github.com/Sambego/storybook-state/issues"
     },
     "homepage": "https://github.com/Sambego/storybook-state#readme",
+    "typings": "lib/index.d.ts",
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
