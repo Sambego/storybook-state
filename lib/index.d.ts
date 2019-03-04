@@ -11,7 +11,7 @@ declare module '@sambego/storybook-state/Store' {
     callbacks: Callback[];
     constructor (state: S);
     set (newState: Partial<S>): void;
-    get (key: string): any;
+    get (key?: string): any;
     subscribe (callback: Callback['callback']): string;
     unSubscribe (subscription: string): void;
   }
