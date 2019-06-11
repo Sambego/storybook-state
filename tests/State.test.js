@@ -32,6 +32,25 @@ test("pass the store to a child component", () => {
   expect(stateElement.childAt(0).props().foo).toBe("baz");
 });
 
+test("pass the store to a child component", () => {
+  const store = new Store({
+    foo: "bar"
+  });
+
+  const component = <p>Child element</p>;
+
+  const stateElement = mount(
+    <State store={store}>{{ ...component, length: 1 }}</State>
+  );
+
+  expect(stateElement.childAt(0).props().foo).toBe("bar");
+
+  store.set({ foo: "baz" });
+  stateElement.update();
+
+  expect(stateElement.childAt(0).props().foo).toBe("baz");
+});
+
 test("pass the store to multiple child components", () => {
   const store = new Store({
     foo: "bar"

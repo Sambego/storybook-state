@@ -39,7 +39,7 @@ export default class State extends Component {
       return this.props.children(state);
     }
 
-    if (this.props.children.length) {
+    if (Array.isArray(this.props.children)) {
       return this.props.children.map(child => cloneElement(child, state));
     }
 
