@@ -42,7 +42,7 @@ declare module '@sambego/storybook-state/StateDecorator' {
   const StateDecorator: (
     store: Store<any>,
     parseState?: <S>(state: S) => S,
-  ) => (storyFn: any) => React.ReactNode;
+  ) => (storyFn: any) => React.ComponentType | JSX.Element;
   export default StateDecorator;
 }
 
