@@ -1,5 +1,11 @@
 # Storybook state
 
+### Warning
+
+**Storybook recently introduced a new way of building addons, the latest version of storybook-state will work with version of storybook > `v5.2.*`. For older versions of storybook use `v1.3.6` of this addon.**
+
+---
+
 ### Getting Started
 
 ```sh
