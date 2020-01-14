@@ -24,36 +24,47 @@ const store = new Store({
   active: false
 });
 
-storiesOf("Button", module).add("with text", () => (
+const SimpleModal = props => (
   <div>
     <State store={store}>
       <Modal>Modal content</Modal>
     </State>
     <Button onClick={() => store.set({ active: !store.get("active") })} />
   </div>
-));
+);
+
+export default { title: "Modal" };
+export const Simple = () => SimpleModal;
 ```
 
 #### Display and update using a State decorator
 
 ```js
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { StateDecorator, Store } from "@sambego/storybook-state";
+import { addDecorator, addParameters } from "@storybook/react";
+import { Store, withState } from "@sambego/storybook-state";
+
+const SimpleCounter = props => {
+  return [
+    <p> Count: {props.count} </p>,
+    <button onClick={props.handleCountUpdate}> {props.count} </button>
+  ];
+};
 
 const store = new Store({
-  active: false
+  count: 0,
+  handleCountUpdate: () => store.set({ count: store.get("count") + 1 })
 });
 
-storiesOf("Button", module)
-  .addDecorator(StateDecorator(store))
-  .add("with text", () => [
-    <Modal key="modal">Modal content</Modal>,
-    <Button
-      onClick={() => store.set({ active: !store.get("active") })}
-      key="button"
-    />
-  ]);
+addDecorator(withState());
+addParameters({
+  state: {
+    store
+  }
+});
+
+export default { title: "Counter" };
+export const Simple = () => SimpleCounter;
 ```
 
 ### Store
@@ -127,10 +138,14 @@ You can also manipulate the state before passing it to the children via the pars
 </State>
 ```
 
-When using the `StateDecorator` you can pass along the state parser function as the second argument.
+When using the `withState` decorator, you can pass along the state parser function as a parameter.
 
 ```js
-storiesOf("Button", module)
-    .addDecorator(StateDecorator(store, state => ({...state, id: `#${state.uuid}`}))
-    .add(...)
+addDecorator(withState());
+addParameters({
+  state: {
+    store,
+    parseState: state => ({ ...state, count: `foo-${state.count}` })
+  }
+});
 ```
