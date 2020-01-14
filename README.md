@@ -3,7 +3,7 @@
 ### Getting Started
 
 ```sh
-npm install --save @sambego/storybook-state
+npm install --save-dev @sambego/storybook-state
 ```
 
 First you will need to create a new store, to save the state and handle updates.
