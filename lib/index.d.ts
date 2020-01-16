@@ -38,18 +38,13 @@ declare module '@sambego/storybook-state/State' {
 
 declare module '@sambego/storybook-state/StateDecorator' {
   /// <reference types="react" />
-  import Store from '@sambego/storybook-state/Store';
-  const StateDecorator: (
-    store: Store<any>,
-    parseState?: <S>(state: S) => S,
-  ) => (storyFn: any) => React.ComponentType | JSX.Element;
-  export default StateDecorator;
+  export default function makeDecorator(...args: any): any;
 }
 
 declare module '@sambego/storybook-state' {
   export { default as State } from '@sambego/storybook-state/State';
   export { default as Store } from '@sambego/storybook-state/Store';
   export {
-    default as StateDecorator,
+    default as withState,
   } from '@sambego/storybook-state/StateDecorator';
 }
