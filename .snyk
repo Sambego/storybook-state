@@ -1,0 +1,9 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-ACORN-559469:
+    - '@storybook/react > webpack > acorn':
+        reason: No patch available
+        expires: '2020-04-08T07:17:00.165Z'
+patch: {}

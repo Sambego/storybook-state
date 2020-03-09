@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "scripts": {
         "compile": "babel src --out-dir dist",
-        "test": "jest --config jest.config.js"
+        "test": "snyk test && jest --config jest.config.js"
     },
     "repository": {
         "type": "git",
@@ -45,13 +45,14 @@
         "prop-types": "^15.6.0",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
-        "react-test-renderer": "^16.4.2"
+        "react-test-renderer": "^16.4.2",
+        "snyk": "^1.298.1"
     },
     "dependencies": {
-        "@storybook/addons": "^5.3.3",
-        "@storybook/api": "^5.3.3",
-        "@storybook/components": "^5.3.3",
-        "@storybook/react": "^5.3.3",
+        "@storybook/addons": "^5.3.14",
+        "@storybook/api": "^5.3.14",
+        "@storybook/components": "^5.3.14",
+        "@storybook/react": "^5.3.14",
         "uuid": "^3.1.0"
     }
 }
