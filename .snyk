@@ -1,9 +1,216 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.25.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-ACORN-559469:
     - '@storybook/react > webpack > acorn':
         reason: No patch available
         expires: '2020-04-08T07:17:00.165Z'
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@storybook/react > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > lodash'
+    - '@storybook/addons > @storybook/api > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/addons > @storybook/api > lodash'
+    - '@storybook/api > telejson > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/api > telejson > lodash'
+    - '@storybook/react > babel-plugin-react-docgen > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > babel-plugin-react-docgen > lodash'
+    - '@storybook/react > @svgr/webpack > @babel/core > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > @svgr/webpack > @babel/core > lodash'
+    - '@storybook/addons > @storybook/api > telejson > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/addons > @storybook/api > telejson > lodash'
+    - '@storybook/react > @storybook/core > babel-preset-minify > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > @storybook/core > babel-preset-minify > lodash'
+    - '@storybook/react > @storybook/core > html-webpack-plugin > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > @storybook/core > html-webpack-plugin > lodash'
+    - '@storybook/react > @storybook/core > inquirer > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > @storybook/core > inquirer > lodash'
+    - '@storybook/react > react-dev-utils > inquirer > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > react-dev-utils > inquirer > lodash'
+    - '@storybook/react > @svgr/webpack > @svgr/plugin-jsx > @babel/core > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @svgr/plugin-jsx > @babel/core >
+          lodash
+    - '@storybook/react > @storybook/core > @storybook/ui > telejson > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@storybook/react > @storybook/core > @storybook/ui > telejson > lodash'
+    - '@storybook/react > @storybook/core > babel-preset-minify > babel-plugin-minify-dead-code-elimination > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > babel-preset-minify >
+          babel-plugin-minify-dead-code-elimination > lodash
+    - '@storybook/react > @storybook/core > react-dev-utils > inquirer > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > react-dev-utils > inquirer >
+          lodash
+    - '@storybook/react > babel-plugin-react-docgen > react-docgen > @babel/core > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > babel-plugin-react-docgen > react-docgen >
+          @babel/core > lodash
+    - '@storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx >
+          @babel/core > lodash
+    - '@storybook/react > @storybook/core > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > babel-plugin-emotion >
+          @babel/helper-module-imports > @babel/types > lodash
+    - '@storybook/react > babel-plugin-react-docgen > react-docgen > @babel/core > @babel/traverse > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > babel-plugin-react-docgen > react-docgen >
+          @babel/core > @babel/traverse > lodash
+    - '@storybook/react > @storybook/core > @storybook/client-api > @storybook/channel-postmessage > telejson > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/client-api >
+          @storybook/channel-postmessage > telejson > lodash
+    - '@storybook/react > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @babel/preset-env >
+          @babel/plugin-transform-unicode-regex >
+          @babel/helper-create-regexp-features-plugin > @babel/helper-regex >
+          lodash
+    - '@storybook/components > @storybook/theming > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/components > @storybook/theming > @emotion/styled >
+          babel-plugin-emotion > @babel/helper-module-imports > @babel/types >
+          lodash
+    - '@storybook/react > babel-plugin-react-docgen > react-docgen > @babel/core > @babel/helpers > @babel/traverse > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > babel-plugin-react-docgen > react-docgen >
+          @babel/core > @babel/helpers > @babel/traverse > lodash
+    - '@storybook/react > @storybook/core > @storybook/ui > @storybook/addons > @storybook/api > telejson > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/ui > @storybook/addons
+          > @storybook/api > telejson > lodash
+    - '@storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helpers > @babel/traverse > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx >
+          @babel/core > @babel/helpers > @babel/traverse > lodash
+    - '@storybook/react > @storybook/core > @storybook/theming > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/theming >
+          @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports
+          > @babel/types > lodash
+    - '@storybook/react > babel-plugin-react-docgen > react-docgen > @babel/core > @babel/helpers > @babel/traverse > @babel/generator > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > babel-plugin-react-docgen > react-docgen >
+          @babel/core > @babel/helpers > @babel/traverse > @babel/generator >
+          lodash
+    - '@storybook/react > @storybook/core > @storybook/ui > @storybook/theming > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/ui >
+          @storybook/theming > @emotion/styled > babel-plugin-emotion >
+          @babel/helper-module-imports > @babel/types > lodash
+    - '@storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helpers > @babel/traverse > @babel/generator > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx >
+          @babel/core > @babel/helpers > @babel/traverse > @babel/generator >
+          lodash
+    - '@storybook/react > babel-plugin-react-docgen > react-docgen > @babel/core > @babel/helpers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > babel-plugin-react-docgen > react-docgen >
+          @babel/core > @babel/helpers > @babel/traverse >
+          @babel/helper-split-export-declaration > @babel/types > lodash
+    - '@storybook/react > @storybook/core > @storybook/ui > @storybook/components > @storybook/theming > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/ui >
+          @storybook/components > @storybook/theming > @emotion/styled >
+          babel-plugin-emotion > @babel/helper-module-imports > @babel/types >
+          lodash
+    - '@storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helpers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx >
+          @babel/core > @babel/helpers > @babel/traverse >
+          @babel/helper-split-export-declaration > @babel/types > lodash
+    - '@storybook/react > babel-plugin-react-docgen > react-docgen > @babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > babel-plugin-react-docgen > react-docgen >
+          @babel/core > @babel/helpers > @babel/traverse >
+          @babel/helper-function-name > @babel/template > @babel/types > lodash
+    - '@storybook/react > @storybook/core > @storybook/ui > @storybook/addons > @storybook/api > @storybook/theming > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/ui > @storybook/addons
+          > @storybook/api > @storybook/theming > @emotion/styled >
+          babel-plugin-emotion > @babel/helper-module-imports > @babel/types >
+          lodash
+    - '@storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @svgr/webpack > @svgr/core > @svgr/plugin-jsx >
+          @babel/core > @babel/helpers > @babel/traverse >
+          @babel/helper-function-name > @babel/template > @babel/types > lodash
+    - '@storybook/react > @storybook/core > @storybook/ui > @storybook/addons > @storybook/api > @storybook/theming > @emotion/core > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2023-06-26T15:14:52.951Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @storybook/react > @storybook/core > @storybook/ui > @storybook/addons
+          > @storybook/api > @storybook/theming > @emotion/core > @emotion/css >
+          babel-plugin-emotion > @babel/helper-module-imports > @babel/types >
+          lodash

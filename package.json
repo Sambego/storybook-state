@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel src --out-dir dist",
-    "test": "snyk test && jest --config jest.config.js"
+    "test": "snyk test && jest --config jest.config.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -46,13 +48,15 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.4.2",
-    "snyk": "^1.298.1"
+    "snyk": "^1.1185.0"
   },
   "dependencies": {
     "@storybook/addons": "^5.3.14",
     "@storybook/api": "^5.3.14",
-    "@storybook/components": "^5.3.14",
-    "@storybook/react": "^5.3.14",
-    "uuid": "^3.1.0"
-  }
+    "@storybook/components": "^6.1.0",
+    "@storybook/react": "^6.5.0",
+    "uuid": "^3.1.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
