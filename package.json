@@ -49,10 +49,10 @@
     "snyk": "^1.298.1"
   },
   "dependencies": {
-    "@storybook/addons": "^5.3.14",
-    "@storybook/api": "^5.3.14",
+    "@storybook/addons": "^7.0.0",
+    "@storybook/api": "^7.0.0",
     "@storybook/components": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/react": "^7.0.0",
     "uuid": "^3.1.0"
   }
 }
